@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require("express");
 
 const connectDB = require('./connectDB');
+const Book = require('./models/Book')
 
 dotenv.config();
 
@@ -15,6 +16,17 @@ connectDB();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+// creating a route
+app.get('/api/book', async (req, res) => {
+    try {
+        const data = await Book.find();
+        res.json(data);
+    } catch (error) {
+        res.sendStatus(500).json({ error: 'An error occured whilee fetching books.' })
+    }
+})
 
 // home route
 app.get('/', (req, res) => {
