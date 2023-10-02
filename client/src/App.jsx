@@ -7,11 +7,12 @@ import Book from './Routes/Book/Book';
 import SingleBook from './Routes/Book/SingleBook';
 import CreateBook from "./Routes/Book/CreateBook";
 import EditBook from "./Routes/Book/EditBook";
+import React from 'react';
 
 
 function App() {
   return (
-    <>
+    <React.Fragment>
       <Router>
         <Header />
         <Routes>
@@ -24,7 +25,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </>
+    </React.Fragment>
   )
 }
 
