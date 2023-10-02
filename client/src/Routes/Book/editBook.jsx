@@ -5,7 +5,7 @@ import NoImageSelected from "../../assets/no-image-selected.jpg";
 function EditBook() {
   const navigate = useNavigate();
   const urlSlug = useParams();
-  const baseUrl = `http://localhost:8000/api/books/${urlSlug.slug}`;
+  const baseUrl = `https://mern-book-app-api-ten.vercel.app/api/books/${urlSlug.slug}`;
 
   const [bookId, setBookId] = useState("");
 
@@ -75,7 +75,7 @@ function EditBook() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/books", {
+      const response = await fetch("https://mern-book-app-api-ten.vercel.app/api/books", {
         method: "PUT",
         body: formData,
       });
@@ -109,7 +109,7 @@ function EditBook() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:8000/api/books/" + bookId,
+        "https://mern-book-app-api-ten.vercel.app/api/books/" + bookId,
         {
           method: "DELETE",
         }
@@ -144,7 +144,7 @@ function EditBook() {
               <img src={`${image}`} alt="preview image" />
             ) : (
               <img
-                src={`http://localhost:8000/uploads/${thumbnail}`}
+                src={`https://mern-book-app-api-ten.vercel.app/uploads/${thumbnail}`}
                 alt="preview image"
               />
             )}
