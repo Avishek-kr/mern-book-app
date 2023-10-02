@@ -4,9 +4,9 @@ import About from './Routes/About/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Book from './Routes/Book/Book';
-import SingleBook from './Routes/Book/SingleBook';
-import CreateBook from "./Routes/Book/CreateBook";
-import EditBook from "./Routes/Book/EditBook";
+import Singlebook from './Routes/Book/Singlebook';
+import Createbook from "./Routes/Book/Createbook";
+import Editbook from "./Routes/Book/Editbook";
 import React from 'react';
 
 
@@ -19,9 +19,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/books' element={<Book />} />
-          <Route path='/books/:slug' element={<SingleBook />} />
-          <Route path='/createbook/' element={<CreateBook />} />
-          <Route path='/editbook/:slug' element={<EditBook />} />
+          <Route path='/books/:slug' element={<Singlebook />} />
+          <Route path='/createbook/' element={<Createbook />} />
+          <Route path='/editbook/:slug' element={<Editbook />} />
         </Routes>
         <Footer />
       </Router>

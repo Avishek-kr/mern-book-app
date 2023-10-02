@@ -1,7 +1,7 @@
 import { useState } from "react";
 import NoImageSelected from "../../assets/no-image-selected.jpg";
 
-function CreateBook() {
+function Createbook() {
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
   const [stars, setStar] = useState("");
@@ -132,4 +132,4 @@ function CreateBook() {
   );
 }
 
-export default CreateBook;
+export default Createbook;

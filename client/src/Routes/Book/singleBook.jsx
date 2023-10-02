@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-const SingleBook = () => {
+const Singlebook = () => {
   const [data, setData] = useState([]);
   const { slug } = useParams();
   const baseUrl = `https://mern-book-app-api-ten.vercel.app/api/books/${slug}`;
@@ -62,4 +62,4 @@ const SingleBook = () => {
     </div>
 }
 
-export default SingleBook;
+export default Singlebook;

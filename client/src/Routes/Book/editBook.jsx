@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import NoImageSelected from "../../assets/no-image-selected.jpg";
 
-function EditBook() {
+function Editbook() {
   const navigate = useNavigate();
   const urlSlug = useParams();
   const baseUrl = `https://mern-book-app-api-ten.vercel.app/api/books/${urlSlug.slug}`;
@@ -205,4 +205,4 @@ function EditBook() {
   );
 }
 
-export default EditBook;
+export default Editbook;
