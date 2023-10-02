@@ -4,9 +4,9 @@ import About from './Routes/About/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Book from './Routes/Book/Book';
-import SingleBook from './Routes/Book/singleBook';
-import CreateBook from "./Routes/Book/createBook";
-import EditBook from "./routes/Book/editBook";
+import SingleBook from './Routes/Book/SingleBook';
+import CreateBook from "./Routes/Book/CreateBook";
+import EditBook from "./Routes/Book/EditBook";
 
 
 function App() {
