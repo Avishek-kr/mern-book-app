@@ -16,7 +16,7 @@ connectDB();
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use("/uploads", express.static("uploads"));
 
 // creating a route
 app.get('/api/book', async (req, res) => {
