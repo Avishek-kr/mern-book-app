@@ -139,6 +139,7 @@ ul.books h3 {
 .bookdetails {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .col-1 { flex-basis: 40%; } 

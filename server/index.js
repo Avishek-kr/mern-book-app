@@ -19,14 +19,34 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
 // creating a route
-app.get('/api/book', async (req, res) => {
+app.get('/api/books', async (req, res) => {
     try {
-        const data = await Book.find();
+        const category = req.query.category;
+        const filter = {};
+        if(category) {
+            filter.category = category;
+        }
+
+        const data = await Book.find(filter);
         res.json(data);
     } catch (error) {
         res.sendStatus(500).json({ error: 'An error occured whilee fetching books.' })
     }
 })
+
+app.get('/api/books/:slug', async (req, res) => {
+    try {
+
+        const slugParams = req.params.slug; 
+
+        const data = await Book.find({ slug: slugParams});
+        res.json(data);
+    } catch (error) {
+        res.sendStatus(500).json({ error: 'An error occured whilee fetching books.' })
+    }
+})
+
+
 
 // home route
 app.get('/', (req, res) => {
