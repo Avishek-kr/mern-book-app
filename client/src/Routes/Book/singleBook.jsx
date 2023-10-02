@@ -21,33 +21,43 @@ const SingleBook = () => {
             }
         }
         fetchData();
-    }, [slug])
+    }, [slug]);
+
+    function StarRating({ numberOfStars }) {
+        const stars = [];
+        for (let index = 0; index < numberOfStars; index++) {
+            stars.push(<span key={index}>⭐</span>)
+        }
+
+        return <div>Rating: {stars}</div>;
+    }
 
     return <div>
 
-    <Link to={"/books"}>👈 Books</Link>
+        <Link to={"/books"}>👈 Books</Link>
 
-    {data.map((indiBook) => (
-       <div className="bookdetails">
-        <div className="col-1">
-            <img src={`http://localhost:8000/uploads/${indiBook.thumbnail}`} alt="" />
-            <br />
-            {/*Edit button*/}
+        {data.map((indiBook) => (
+            <div className="bookdetails">
+                <div className="col-1">
+                    <img src={`http://localhost:8000/uploads/${indiBook.thumbnail}`} alt="" />
+                    <br />
+                    {/*Edit button*/}
+                </div>
+                <div className="col-2">
+                    <h1>{indiBook.title}</h1>
+                    <p>{indiBook.description}</p>
+                    {/*stars*/}
+                    <StarRating numberOfStars={indiBook.stars} />
+                    <p>Category</p>
+                    <ul>
+                        {indiBook.category.map((indiCat, index) => (
+                            <li key={index}>{indiCat}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
-        <div className="col-2">
-            <h1>{indiBook.title}</h1>
-            <p>{indiBook.description}</p>
-            {/*stars*/}
-            <p>Category</p>
-            <ul>
-                {indiBook.category.map((indiCat, index) => (
-                    <li key={index}>{indiCat}</li>
-                ))}
-            </ul>
-        </div>
-       </div>
-    ))}
-        </div>
+        ))}
+    </div>
 }
 
 export default SingleBook
