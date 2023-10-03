@@ -38,6 +38,7 @@ input[type="submit"] {
   height: 40px;
   margin-bottom: 10px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 textarea {
@@ -139,6 +140,11 @@ ul.books h3 {
 .bookdetails {
   display: flex;
   gap: 20px;
+  margin-top: 10px;
+}
+
+.bookdetails ul {
+  list-style-type: disclosure-closed;
 }
 
 .col-1 { flex-basis: 40%; } 
@@ -154,4 +160,6 @@ ul.books h3 {
   background-color: red;
   color: white;
   padding: 5px 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
 }

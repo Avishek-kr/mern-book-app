@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Book = () => {
-  const baseUrl = "https://mern-book-app-api-ten.vercel.app/api/books";
+  const baseUrl = "http://localhost:8000/api/books";
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -70,7 +70,7 @@ const Book = () => {
             <li key={item._id}>
               <Link to={`/books/${item.slug}`}>
                 <img
-                  src={`https://mern-book-app-api-ten.vercel.app/uploads/${item.thumbnail}`}
+                  src={`http://localhost:8000/uploads/${item.thumbnail}`}
                   alt={item.title}
                 />
                 <h3>{item.title}</h3>
