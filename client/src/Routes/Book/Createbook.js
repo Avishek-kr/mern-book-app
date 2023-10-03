@@ -26,7 +26,7 @@ function Createbook() {
     formData.append("thumbnail", thumbnail);
 
     try {
-      const response = await fetch("https://mern-book-app-api-ten.vercel.app/api/books", {
+      const response = await fetch("https://mern-book-app-api-sigma.vercel.app/api/books", {
         method: "POST",
         body: formData,
       });
