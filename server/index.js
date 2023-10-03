@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 // Middleware
 app.use(cors({
-  origin: ["https://mern-book-app-client-orpin.vercel.app"],
+  origin: ["https://mern-book-app-client-five.vercel.app"],
   methods: ["POST", "GET", "DELETE", "PUT"],
   credentials: true
 }));
