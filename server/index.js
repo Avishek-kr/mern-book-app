@@ -22,7 +22,11 @@ const PORT = process.env.PORT || 8000;
 
 connectDB();
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ["https://mern-book-app-api-ten.vercel.app"],
+  methods: ["POST", "GET", "DELETE", "PUT"],
+  credentials: true
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));

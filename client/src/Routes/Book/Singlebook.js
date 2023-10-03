@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 const Singlebook = () => {
   const [data, setData] = useState([]);
   const { slug } = useParams();
-  const baseUrl = `http://localhost:8000/api/books/${slug}`;
+  const baseUrl = `https://mern-book-app-api-ten.vercel.app/api/books/${slug}`;
 
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Singlebook = () => {
         <div className="bookdetails" key={indiBook._id}>
           <div className="col-1">
             <img
-              src={`http://localhost:8000/uploads/${indiBook.thumbnail}`}
+              src={`https://mern-book-app-api-ten.vercel.app/uploads/${indiBook.thumbnail}`}
               alt={indiBook.title}
             />
             <br/>
