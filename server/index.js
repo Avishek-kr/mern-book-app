@@ -15,18 +15,14 @@ const connectDB = require("./connectDB");
 const Book = require("./models/Books");
 
 
-// to create an express application//
+// to create an express application
 const app = express();
 
 const PORT = process.env.PORT || 8000;
 
 connectDB();
 // Middleware
-app.use(cors({
-  origin: ["https://mern-book-app-client-five.vercel.app"],
-  methods: ["POST", "GET", "DELETE", "PUT"],
-  credentials: true
-}));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
